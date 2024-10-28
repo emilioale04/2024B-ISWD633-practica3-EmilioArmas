@@ -10,7 +10,7 @@ docker network create net-wp
 # COMPLETAR LA SIGUIENTE ORACIÓN. REVISAR LA DOCUMENTACIÓN DE LA IMAGEN EN https://hub.docker.com/
 En el esquema del ejercicio carpeta del contenedor (a) es `/var/lib/mysql`
 
-Ruta carpeta host: .../ejercicio3/db
+Ruta carpeta host: `.../ejercicio3/db`
 
 ### ¿Qué contiene la carpeta db del host?
 Inicialmente se encuentra vacía.
@@ -27,12 +27,13 @@ Se encuentran los archivos del directorio de datos de mysql, entre ellos, los ar
 # COMPLETAR LA SIGUIENTE ORACIÓN. REVISAR LA DOCUMENTACIÓN DE LA IMAGEN EN https://hub.docker.com/
 En el esquema del ejercicio la carpeta del contenedor (b) es `/var/www/html`
 
-Ruta carpeta host: .../ejercicio3/www
+Ruta carpeta host: `.../ejercicio3/www`
 
 ### Crear un contenedor con la imagen wordpress en la red net-wp, configurar las variables de entorno WORDPRESS_DB_HOST, WORDPRESS_DB_USER, WORDPRESS_DB_PASSWORD y WORDPRESS_DB_NAME (los valores de estas variables corresponden a los del contenedor creado previamente)
 ```
 docker run -d --name wordpress-cont --network net-wp -e WORDPRESS_DB_HOST=mysql-cont:3306 -e WORDPRESS_DB_USER=admin -e WORDPRESS_DB_PASSWORD=admin -e WORDPRESS_DB_NAME=wordpressdb -p 9500:80 -v ${PWD}/ejercicio3/www:/var/www/html wordpress:latest
 ```
+![alt text](screenshots/image-5.png)
 
 ### Personalizar la apariencia de wordpress y agregar una entrada
 
